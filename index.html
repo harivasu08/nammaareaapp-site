@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Namma Ooru App</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      color: #555;
+      font-size: 18px;
+    }
+    .location-selector {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    select {
+      padding: 6px 12px;
+      font-size: 16px;
+    }
+    footer {
+      margin-top: 150px;
+      font-size: 14px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="location-selector">
+    <select id="locationSelect" onchange="updateFooter()">
+      <option value="Singaperumal Koil">Singaperumal Koil</option>
+      <option value="Mahindra City">Mahindra City</option>
+    </select>
+  </div>
+
+  <h1>🚧 Launching Soon! 🚀</h1>
+  <p>Stay tuned for more updates. We’re building something exciting in your area!</p>
+
+  <footer id="footerText">
+    Namma Singai powered by <strong>Namma Ooru App</strong>
+  </footer>
+
+  <script>
+    function updateFooter() {
+      const location = document.getElementById("locationSelect").value;
+      const shortName = location === "Singaperumal Koil" ? "Namma Singai" : location;
+      document.getElementById("footerText").innerHTML = `${shortName} powered by <strong>Namma Ooru App</strong>`;
+    }
+  </script>
+</body>
+</html>
