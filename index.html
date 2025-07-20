@@ -26,22 +26,30 @@
       font-size: 16px;
     }
     footer {
-      margin-top: 150px;
+      margin-top: 40px;
       font-size: 14px;
       color: #999;
     }
+    img {
+      margin-top: 20px;
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
   </style>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H77E1YY28G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-H77E1YY28G');
-</script>
+  <!-- Google Analytics tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H77E1YY28G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H77E1YY28G');
+  </script>
 </head>
 <body>
+
   <div class="location-selector">
     <select id="locationSelect" onchange="updateFooter()">
       <option value="Singaperumal Koil">Singaperumal Koil</option>
@@ -52,6 +60,9 @@
   <h1>🚧 Launching Soon! 🚀</h1>
   <p>Stay tuned for more updates. We’re building something exciting in your area!</p>
 
+  <!-- Location-specific image -->
+  <img id="locationImage" src="singaperumal.png" alt="Location Preview">
+
   <footer id="footerText">
     Namma Singai powered by <strong>Namma Ooru App</strong>
   </footer>
@@ -61,7 +72,12 @@
       const location = document.getElementById("locationSelect").value;
       const shortName = location === "Singaperumal Koil" ? "Namma Singai" : location;
       document.getElementById("footerText").innerHTML = `${shortName} powered by <strong>Namma Ooru App</strong>`;
+
+      // Switch image based on location
+      const imagePath = location === "Singaperumal Koil" ? "singaperumal.png" : "mahindra.png";
+      document.getElementById("locationImage").src = imagePath;
     }
   </script>
+
 </body>
 </html>
